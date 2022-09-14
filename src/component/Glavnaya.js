@@ -10,6 +10,7 @@ import {
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Converter from './Converter';
+import Settle from './Settle';
 
 const Info = [
   {
@@ -65,11 +66,7 @@ function currentAccountScreen({ navigation: { goBack } }) {
   return (
     <View style={{ alignItems: 'center', justifyContent: 'center' }}>
       <Text style={styles.text}>Текущий счёт</Text>
-      <FlatList
-        data={Info}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-      />
+      <Settle />
       <Button
         title="Перейдите на главную страницу"
         onPress={() => navigation.navigate('Current')}
